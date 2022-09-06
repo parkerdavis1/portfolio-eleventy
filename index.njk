@@ -1,0 +1,131 @@
+---
+layout: base.njk
+---
+
+
+      <div class="splash">
+        <div class="splash-text">
+          <h2 class="greeting">Hi, I’m Parker</h2>
+          <p>I am a web developer, birder, and musician interested in the intersection of conservation, research, sound, music, and coding.</p>
+        </div>
+        <div class="splash-portrait">
+            <div class="portrait-container">
+              <img src="./assets/images/Nice face@2x.png" alt="">
+            </div>
+        </div>
+      </div>
+      
+      <main>
+        <section id="projects">
+          <h2>Projects:</h2>
+
+          {% macro ProjectCard(params) %}
+          <div class="project-card-wide {% if params.first %} first{% endif %}" id="{{ params.id }}">
+            <div class="project-card-screenshot">
+              <a href="{{ params.pageUrl}}">
+                <picture><img src="{{ params.img }}" alt="{{ params.imgAlt }}"></picture>
+              </a>
+            </div>
+            <div class="project-card-description">
+              <div>
+                <a href="{{ params.pageUrl}}"><h3>{{ params.title }}</h3></a>
+                <p>{{ params.description }}</p>
+                <div class="project-card-tags">
+                <p>
+                  {% for tag in params.tags %}
+                  <span>{{ tag }}</span>
+                  {% endfor %}
+                </p>
+              </div>
+              </div>
+             
+              
+              <div class="button-container">
+                  <a href="{{params.liveUrl}}" target="_blank"><button>See it live</button></a>
+                  <a href="{{params.githubUrl}}" target="_blank"><button>Source Code</button></a>
+                </div>
+            </div>
+          </div>
+          {% endmacro %}
+
+          <div class="project-container">
+          {{ ProjectCard({
+            title: "RainCrow",
+            first: true,
+            img: "./assets/images/ebird-weather-post2.png",
+            imgAlt: "eBird Weather App Screenshot",
+            description: "Automatically gather weather data for eBird checklists using historical weather APIs.",
+            tags: ["HTML", "CSS", "Javascript", "Svelte"],
+            id: "ebird-weather",
+            pageUrl: "/projects/ebird-weather",
+            liveUrl: "https://raincrow.netlify.app/",
+            githubUrl: "https://github.com/parkerdavis1/RainCrow"
+          }) }}
+
+          {{ ProjectCard({
+            title: "Birds Make Sound Blog",
+            first: false,
+            img: "./assets/images/birdsmakesound-screenshot.png",
+            imgAlt: "Birds Make Sound blog screenshot",
+            description: "Personal writing about birds, sound, and audio recording.",
+            tags: ["HTML", "CSS", "Javascript", "11ty", "Markdown", "Nunjucks"],
+            id: "birds-make-sound",
+            pageUrl: "/projects/birds-make-sound",
+            liveUrl: "#birds-make-sound",
+            githubUrl: "#birds-make-sound"
+          }) }}
+          </div>
+{# 
+          <div class="project-card-wide" id="ebird-weather">
+            <div class="project-card-screenshot">
+              <picture><img src="./assets/images/ebirdWeather.png" alt="eBirdWeather App Screenshot"></picture>
+            </div>
+            <div class="project-card-description">
+              <a href="/projects/ebird-weather"><h3>eBird Weather App</h3></a>
+              <p>Automatically gather weather data for eBird checklists using historical weather APIs.</p>
+              <p>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Javascript</span>
+              </p>
+              <br>
+              <a href="#ebird-weather"><button>See it live!</button></a>
+              <a href="#ebird-weather"><button>Source Code</button></a>
+            </div>
+          </div>
+          
+          <div class="project-card-wide" id="birds-make-sound">
+            <div class="project-card-screenshot">
+              <picture><img src="./assets/images/birdsmakesound-screenshot.png" alt="eBirdWeather App Screenshot"></picture>
+            </div>
+            <div class="project-card-description">
+              <a href="/projects/birds-make-sound"><h3>Birds Make Sound Blog</h3></a>
+              <p>Personal writing about birds, sound, and audio recording.</p>
+              <p>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Javascript</span>
+                <span>11ty</span>
+                <span>Markdown</span>
+                <span>Nunjucks</span>
+              </p>
+              <br>
+              <a href="#birds-make-sound"><button>See it live!</button></a>
+              <a href="#birds-make-sound"><button>Source Code</button></a>
+            </div> #}
+          </div>
+
+        </section>
+
+        <section id="about">
+          <h2>About</h2>
+          <p><a href="mailto:parkied@gmail.com" class="email">Reach out</a> if you have any ideas of projects you want realized, especially related to conservation, research, sound, and music.</p>
+          {# <br>
+          <h3>Technologies:</h3>
+          <p>HTML, CSS, Javascript, 11ty, Svelte</p> #}
+        </section>
+
+        <section id="web-skills">
+ 
+        </section>
+      </main>

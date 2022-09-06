@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parker Davis{% if title %} - {{title}} {% endif %}</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    {% if hasCodeSnippets %}
+    <link rel="stylesheet" href="/css/prism.css">
+    {% endif %}
+  </head>
+  <body>
+    
+    <nav class="top-nav{% if isProject %} isProject{% endif %}">
+      <div class="nav-left">
+          <a href="/"><h1>Parker Davis</h1></a>
+      </div>
+      <ul class="nav-right">
+          <a href="/#projects"><li>Projects</li></a>
+          <a href="/#about"><li>About</li></a>
+      </ul>
+    </nav>
+
+    {{ content | safe }}
+
+  </body>
+  {% if hasCodeSnippets %}
+  <script src="/assets/prism.js"></script>
+  {% endif %}
+</html>

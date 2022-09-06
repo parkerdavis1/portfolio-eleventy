@@ -1,0 +1,45 @@
+---
+layout: base.njk
+---
+{# <div class="splash-small"> #}
+    
+</div>
+<main>
+    <div class="project-content">
+        <nav class="project-nav">
+        {%- set nextPost = collections.projects | getNextCollectionItem(page) %}
+        {%- if nextPost %}
+            <a href="{{ nextPost.url | url }}">
+                <div class="nav-item">
+                ←{{ nextPost.data.title }}
+                </div>
+            </a>
+        {% else %}
+            <div></div>
+        {% endif %}
+
+        {%- set previousPost = collections.projects | getPreviousCollectionItem(page) %}
+        {%- if previousPost %}
+            <div class="nav-item">
+            <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}→</a>
+            </div>
+        {% else %}
+            <div></div>
+        {% endif %}
+        </nav>
+        <div class="project-post">
+            <div class="reading-width">
+                <h1>{{title}}</h1>
+                {# <picture class="top-picture">
+                <img src="{{topPicture}}" alt="{{topPictureAlt}}">
+                </picture> #}
+
+                <div class="button-container"><a href="{{liveUrl}}" target="_blank"><button>See it live</button></a><a href="{{githubUrl}}" target="_blank"><button>Source Code (github)</button></a></div>
+            </div>
+
+        {{ content | safe }}
+        
+        </div>
+
+    </div>
+</main>
