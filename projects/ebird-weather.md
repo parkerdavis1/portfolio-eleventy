@@ -1,8 +1,6 @@
 ---
 title: RainCrow
 layout: project-page.njk
-topPicture: "/assets/images/ebird-weather-post2.png"
-topPictureAlt: "eBird Weather App Screenshot"
 liveUrl: "https://raincrow.netlify.app/"
 githubUrl: "https://github.com/parkerdavis1/RainCrow"
 ---
@@ -49,7 +47,7 @@ As a somewhat obsessive eBird user, I like to include weather observations in th
 
 ## Description
 
-To get weather data for a checklist that is already submitted to eBird, all the user has to do is input the checklist ID or the entire URL for a checklist and click "Get Weather". The app gathers the weather conditions for the location and duration of the checklist and displays them below the input form. The "Copy to Clipboard" button is especially helpful for mobile users. This information can now be pasted in the comments section for a given checklist.
+To get weather data for a checklist that is already submitted to eBird, all the user has to do is input the checklist ID (or the entire URL) for a checklist and click "Get Weather". The app gathers the weather conditions for the location and duration of the checklist and displays them below the input form. The "Copy to Clipboard" button is especially helpful for mobile users. This information can now be pasted in the comments section for a given checklist.
 
 ![eBird Weather app post-submit screenshot](/assets/images/RainCrowScreenshots/submitted.png)
 
@@ -95,7 +93,8 @@ After sending the app to some other eBird users, I continued to refine the UI/UX
 
 ## Looking Forward
 
-While being amazing resources that are free in low-use cases, the primary limitations of the eBird Weather app are related to the weather APIs it uses. The times I imagine this app would be most useful are when the user returns from birding in remote corners of the world, deep in canyons or high on mountain tops where there is no cell service. Unfortunately, there are rarely weather stations close to these locations, so the weather data returned from the APIs does not necessarily reflect the weather of the microhabitat where you actually were.
+While being amazing resources that are free in low-use cases, the primary limitations of the eBird Weather app are related to the weather APIs it uses. The times I imagine this app would be most useful are when the user returns from birding in remote corners of the world, deep in canyons or high on mountain tops where there is no cell service. Unfortunately, there are rarely weather stations close to these locations, so the weather data returned from the APIs does not necessarily reflect the weather of the microhabitat where you actually were. It is not entirely transparent how OpenWeather determines the weather for more remote locations.
 
 Ideally, I would like to find a free weather API that does take into account topographical information to estimate temperatures for more remote locations.
+
 </div>
