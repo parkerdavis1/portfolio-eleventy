@@ -142,9 +142,9 @@ main {
 section {
   margin-top: 4rem;
 }
-section:last-of-type {
+/* section:last-of-type {
   margin-bottom: 20rem;
-}
+} */
 
 
 /* ----- PROJECTS ----- */
