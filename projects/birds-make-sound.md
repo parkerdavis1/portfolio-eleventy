@@ -7,7 +7,9 @@ topPictureAlt: "Birds Make Sound Blog Screenshot"
 <div class="full-width">
 
 <!-- ![Birds Make Sound Screenshot](/assets/images/birdsmakesound-screenshot-large.png) -->
+<a href="https://birdsmakesound.com" target="_blank">
 {% image "assets/images/birdsmakesound-screenshot-large.png", "Birds Make Sound screenshot" %}
+</a>
 
 </div>
 
