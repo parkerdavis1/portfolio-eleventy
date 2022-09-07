@@ -47,7 +47,7 @@ As a somewhat obsessive eBird user, I like to include weather observations in th
 
 ## Description
 
-To get weather data for a checklist that is already submitted to eBird, all the user has to do is input the checklist ID (or the entire URL) for a checklist and click "Get Weather". The app gathers the weather conditions for the location and duration of the checklist and displays them below the input form. The "Copy to Clipboard" button is especially helpful for mobile users. This information can now be pasted in the comments section for a given checklist.
+To get weather data for a checklist that is already submitted to eBird, all the user has to do is input the checklist ID (or the entire URL) for a checklist and click "Get Weather". The app gathers the weather conditions for the location and duration of the checklist and displays them below the input form. The data is copied with the "Copy to Clipboard" button and can now be pasted in the comments section for a given checklist.
 
 {% image "assets/images/RainCrowScreenshots/submitted.png", "RainCrow eBird Weather submitted screenshot" %}
 
@@ -62,7 +62,7 @@ It does require more input from the user, but I tried to make the input as painl
 
 ### Erratic API returns with Visual Crossing
 
-In my first implementation, I used the Visual Crossing "Timeline Weather" API because it was the only service I could find to make free historical weather API calls.
+In my first implementation, I used the [Visual Crossing "Timeline Weather" API](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/) because it was the only service I could find to make free historical weather API calls.
 
 In my initial testing, I found Visual Crossing's results to be inconsistent with real-time weather data collected at the start and end of each checklist. I realized that for each API call, Visual Crossing rounds the inputed time down to the base hour. The weather data returned for a 11:59am call would be for 11:00am (59 minutes earlier) instead of the actual time or 12:00pm (1 minute later). This was not nearly accurate enough to be useful, so I implemented functions to get the weather data for the upper and lower bounds of a time. If I wanted weather data for 10:30am, I would fetch data for 10:00am and 11:00am. A simple calculation could then give a coarse estimate of the temperature at the desired minute.
 
@@ -72,17 +72,17 @@ I was relatively satisfied with this implementation in many cases but I found th
 
 ### UNIX time stamps with OpenWeather
 
-Open Weather recently introduced the "One Call" API which is very similar to Visual Crossing so I decided to give it a try.
+Open Weather recently introduced the ["One Call" API](https://openweathermap.org/api/one-call-3#history) which is very similar to Visual Crossing so I decided to give it a try.
 
 One perk was the API automatically returned weather for the minute that you request, instead of having to do multiple API requests and calculations. Because the returned data is for the minute requested, it is far easier to parse. This improved efficiency and greatly reduced complexity for very recent weather requests.
 
 OpenWeather does require inputting a UNIX time stamp for queries. Because the location of a checklist is not necessarily in the same timezone as the user, I needed some way to find the timezone offset for any given location. I looked into a few tools and services but they seemed overly bloated, complex or too expensive.
 
-Eventually I realized OpenWeather does provide timezone offset data in its API returns, so it was only a matter of making a pre-weather query to get the timezone offset for a location, then use that data to calculate the necessary UNIX time stamps to then make the actual weather requests. Some minor inefficiency, but necessary due to this specific API's quirks.
+Eventually I realized OpenWeather does provide timezone offset data in its API returns, so it was only a matter of making a pre-weather query to get the timezone offset for a location, then use that data to calculate the necessary UNIX time stamps to then make the actual weather requests. Some minor inefficiency but necessary due to this specific API's quirks.
 
 ## Svelte and added customization
 
-I decided I wanted to add some user customization and more complex state to the app so I recreated the app in Svelte. I added an options button to allow the user to pick which weather data to include in their checklist, which has a preview field at the top. I refined the form validation and error handling.
+I decided I wanted to add some user customization to the app so I recreated the app in [Svelte](https://svelte.dev/). I added an options button to allow the user to pick which weather data to include in their checklist, which has a preview field at the top. I refined the form validation and error handling.
 
 <!-- ![RainBird options menu screenshot](/assets/images/RainCrowScreenshots/options.png) -->
 {% image "assets/images/RainCrowScreenshots/options.png", "RainBird options menu screenshot" %}

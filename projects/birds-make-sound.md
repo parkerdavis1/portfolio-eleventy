@@ -15,6 +15,6 @@ topPictureAlt: "Birds Make Sound Blog Screenshot"
 
 This was originally on [Blogger](https://birdsmakesound.blogspot.com/), but I never felt satisfied with the available themes so I recreated it “from scratch” using HTML and CSS.
 
-Using 11ty static site generator, I converted the HTML and CSS to Nunjucks templates, allowing simple updates in Markdown. For improved user experience, I created shortcodes for Eleventy-img to automatically resize and display the optimally sized images depending on the user’s screen size.
+Using 11ty static site generator, I converted the HTML and CSS to Nunjucks templates. New posts can be written in Markdown. All images are automatically resized and optimized for viewing on different screensizes using Eleventy-img and custom-written eleventy shortcodes.
 
 </div>
