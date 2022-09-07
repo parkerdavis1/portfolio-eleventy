@@ -49,13 +49,14 @@ As a somewhat obsessive eBird user, I like to include weather observations in th
 
 To get weather data for a checklist that is already submitted to eBird, all the user has to do is input the checklist ID (or the entire URL) for a checklist and click "Get Weather". The app gathers the weather conditions for the location and duration of the checklist and displays them below the input form. The "Copy to Clipboard" button is especially helpful for mobile users. This information can now be pasted in the comments section for a given checklist.
 
-![eBird Weather app post-submit screenshot](/assets/images/RainCrowScreenshots/submitted.png)
+{% image "assets/images/RainCrowScreenshots/submitted.png", "RainCrow eBird Weather submitted screenshot" %}
 
 If the user wants to gather weather data before a checklist is submitted, they can use the "Pre-Submit" form. This removes the need to edit a checklist after submitting it. It is especially useful for shared checklists, allowing weather observations to be shared with all observers.
 
 It does require more input from the user, but I tried to make the input as painless as possible. The locate button automatically inputs your current GPS coordinates. The date and start time automatically pre-fill the current date and the time rounded down to the nearest hour. The duration accepts minutes, mimicking data fields on eBird.
 
-![eBird Weather app pre-submit screenshot](/assets/images/RainCrowScreenshots/pre-submit.png)
+<!-- ![eBird Weather app pre-submit screenshot](/assets/images/RainCrowScreenshots/pre-submit.png) -->
+{% image "assets/images/RainCrowScreenshots/pre-submit.png", "RainCrow eBird Weather pre-submit screenshot" %}
 
 ## Challenges
 
@@ -83,13 +84,15 @@ Eventually I realized OpenWeather does provide timezone offset data in its API r
 
 I decided I wanted to add some user customization and more complex state to the app so I recreated the app in Svelte. I added an options button to allow the user to pick which weather data to include in their checklist, which has a preview field at the top. I refined the form validation and error handling.
 
-![RainBird options menu screenshot](/assets/images/RainCrowScreenshots/options.png)
+<!-- ![RainBird options menu screenshot](/assets/images/RainCrowScreenshots/options.png) -->
+{% image "assets/images/RainCrowScreenshots/options.png", "RainBird options menu screenshot" %}
 
 ## User Feedback
 
 After sending the app to some other eBird users, I continued to refine the UI/UX. I added the ability to enter the entire URL for a checklist instead of just the Checklist ID. The About section was edited to be as concise as possible while addressing most of the questions and issues users experienced.
 
-![RainBird About menu screenshot](/assets/images/RainCrowScreenshots/about.png)
+<!-- ![RainBird About menu screenshot](/assets/images/RainCrowScreenshots/about.png) -->
+{% image "assets/images/RainCrowScreenshots/about.png", "RainBird about menu screenshot" %}
 
 ## Looking Forward
 

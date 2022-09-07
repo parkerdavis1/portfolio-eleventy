@@ -6,11 +6,11 @@ layout: base.njk
       <div class="splash">
         <div class="splash-text">
           <h2 class="greeting">Hi, I’m Parker</h2>
-          <p>I am a web developer, birder, and musician interested in the intersection of conservation, research, sound, music, and coding.</p>
+          <p>I am a web developer, birder, and musician interested in the intersection of conservation, research, sound, and coding.</p>
         </div>
         <div class="splash-portrait">
             <div class="portrait-container">
-              <img src="./assets/images/Nice face@2x.png" alt="">
+              {% image "./assets/images/portrait-bw.png", "Black and white image of Parker Davis" %}
             </div>
         </div>
       </div>
@@ -23,7 +23,8 @@ layout: base.njk
           <div class="project-card-wide {% if params.first %} first{% endif %}" id="{{ params.id }}">
             <div class="project-card-screenshot">
               <a href="{{ params.pageUrl}}">
-                <picture><img src="{{ params.img }}" alt="{{ params.imgAlt }}"></picture>
+                {# <picture><img src="{{ params.img }}" alt="{{ params.imgAlt }}"></picture> #}
+                {% imageMacro params.img, params.imgAlt %}
               </a>
             </div>
             <div class="project-card-description">
@@ -119,7 +120,8 @@ layout: base.njk
 
         <section id="contact">
           <h2>Contact</h2>
-          <p><a href="mailto:parkied@gmail.com" class="email">Reach out</a> if you have any ideas of projects you want realized, especially related to conservation, research, sound, and music.</p>
+          <p>Email: <a href="mailto:parker@birdsmakesound.com" class="email">parker@birdsmakesound.com</a></p>
+          <p>Reach out if you want to collaborate on personal, creative, or business projects.</p>
           {# <br>
           <h3>Technologies:</h3>
           <p>HTML, CSS, Javascript, 11ty, Svelte</p> #}
