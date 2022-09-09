@@ -1,8 +1,8 @@
 ---
 title: Birds Make Sound
 layout: project-page.njk
-topPicture: "/assets/images/birdsmakesound-screenshot-large.png"
-topPictureAlt: "Birds Make Sound Blog Screenshot"
+liveUrl: "https://birdsmakesound.com"
+githubUrl: "https://github.com/parkerdavis1/birdsmakesound"
 ---
 <div class="full-width">
 
