@@ -74,11 +74,11 @@ I was relatively satisfied with this implementation in many cases but I found th
 
 Open Weather recently introduced the ["One Call" API](https://openweathermap.org/api/one-call-3#history) which is very similar to Visual Crossing so I decided to give it a try.
 
-One perk was the API automatically returned weather for the minute that you request, instead of having to do multiple API requests and calculations. Because the returned data is for the minute requested, it is far easier to parse. This improved efficiency and greatly reduced complexity for very recent weather requests.
+One perk was the API automatically returned weather for the minute that you request, instead of having to do multiple API requests and calculations. This improved efficiency and greatly reduced complexity for very recent weather requests.
 
-OpenWeather does require inputting a UNIX time stamp for queries. Because the location of a checklist is not necessarily in the same timezone as the user, I needed some way to find the timezone offset for any given location. I looked into a few tools and services but they seemed overly bloated, complex or too expensive.
+OpenWeather does require inputting a UNIX timestamp for queries. Because the location of a checklist is not necessarily in the same timezone as the user, in order to calculate the UNIX timestamp I needed some way to find the timezone offset for any given location. I looked into a few tools and services but they seemed overly bloated, complex or too expensive.
 
-Eventually I realized OpenWeather does provide timezone offset data in its API returns, so it was only a matter of making a pre-weather query to get the timezone offset for a location, then use that data to calculate the necessary UNIX time stamps to then make the actual weather requests. Some minor inefficiency but necessary due to this specific API's quirks.
+Eventually I realized OpenWeather provides timezone offset data in its API returns, so it was only a matter of making a pre-weather query to get the timezone offset for a location, then use that data to calculate the necessary UNIX timestamps to make the actual weather requests. Some minor inefficiency but necessary due to this specific API's quirks.
 
 ## Svelte and added customization
 
@@ -96,8 +96,8 @@ After sending the app to some other eBird users, I continued to refine the UI/UX
 
 ## Looking Forward
 
-While being amazing resources that are free in low-use cases, the primary limitations of the eBird Weather app are related to the weather APIs it uses. The times I imagine this app would be most useful are when the user returns from birding in remote corners of the world, deep in canyons or high on mountain tops where there is no cell service. Unfortunately, there are rarely weather stations close to these locations, so the weather data returned from the APIs does not necessarily reflect the weather of the microhabitat where you actually were. It is not entirely transparent how OpenWeather determines the weather for more remote locations.
+While being amazing resources that are free in low-use cases, the primary limitations of the eBird Weather app are related to the weather APIs it uses. The times I imagine this app would be most useful are when the user returns from birding in remote corners of the world, deep in canyons or high on mountain tops where there is no cell service. Unfortunately, there are rarely weather stations close to these locations, so the weather data returned from the APIs does not necessarily reflect the weather of the microhabitat where you actually were. There is much more room for error in these remote locations.
 
-Ideally, I would like to find a free weather API that does take into account topographical information to estimate temperatures for more remote locations.
+After the 1000 free daily API requests, OpenWeather is on the expensive side (15 cents per 100 requests) for use in an app that does not generate any revenue. When serving thousands of requests a day this adds up over the course of a year. If Visual Crossing tweaked their API to return subhourly historical data I would consider switching back. In the meantime, I will likely add a "Buy Me A Coffee" button and limit each users requests to 10 or so per day.
 
 </div>
