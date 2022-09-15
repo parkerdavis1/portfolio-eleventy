@@ -204,8 +204,11 @@ section {
   border: 3px var(--blue) solid;
 }
 picture img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+}
+.small-image {
+  max-width: 320px;
 }
 .project-card p {
   max-width: 400px;
