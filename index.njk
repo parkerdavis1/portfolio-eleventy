@@ -42,8 +42,8 @@ layout: base.njk
              
               
               <div class="button-container">
-                  <a href="{{params.liveUrl}}" target="_blank"><button>See it live</button></a>
-                  <a href="{{params.githubUrl}}" target="_blank"><button>Source Code</button></a>
+                  {% if params.liveUrl %}<a href="{{params.liveUrl}}" target="_blank"><button>See it live</button></a> {% endif %}
+                  {% if params.githubUrl %}<a href="{{params.githubUrl}}" target="_blank"><button>Source Code</button></a>{% endif %}
                 </div>
             </div>
           </div>

@@ -34,7 +34,10 @@ layout: base.njk
                 <img src="{{topPicture}}" alt="{{topPictureAlt}}">
                 </picture> #}
 
-                <div class="button-container"><a href="{{liveUrl}}" target="_blank"><button>See it live</button></a><a href="{{githubUrl}}" target="_blank"><button>Source Code (github)</button></a></div>
+                <div class="button-container">
+                    {% if liveUrl %}<a href="{{liveUrl}}" target="_blank"><button>See it live</button></a>{% endif %}
+                    {% if githubUrl %} <a href="{{githubUrl}}" target="_blank"><button>Source Code (github)</button></a> {% endif %}
+                </div>
             </div>
 
         {{ content | safe }}

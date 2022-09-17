@@ -2,7 +2,6 @@
 title: Birds Make Sound
 layout: project-page.njk
 liveUrl: "https://birdsmakesound.com"
-githubUrl: "https://github.com/parkerdavis1/birdsmakesound"
 ---
 <div class="full-width">
 
