@@ -89,14 +89,14 @@ Eventually I realized OpenWeather provides timezone offset data in its API retur
 
 ## Svelte and added customization
 
-I decided I wanted to add some user customization to the app so I recreated the app in [Svelte](https://svelte.dev/). I added an options button to allow the user to pick which weather data to include in their checklist, which has a preview field at the top. I refined the form validation and error handling.
+I decided I wanted to add some user customization to the app so I recreated the app in [Svelte](https://svelte.dev/). I added an options button to allow the user to pick which weather data to include in their checklist, which has a preview field at the top. I added regex form validation and refined the error handling.
 
 <!-- ![RainBird options menu screenshot](/assets/images/RainCrowScreenshots/options.png) -->
 {% image "assets/images/RainCrowScreenshots/options.png", "RainBird options menu screenshot" %}
 
 ## User Feedback
 
-After sending the app to some other eBird users, I continued to refine the UI/UX. I added the ability to enter the entire URL for a checklist instead of just the Checklist ID. The About section was edited to be as concise as possible while addressing most of the questions and issues users experienced.
+After sending the app to some other eBird users, I continued to refine the UI/UX. I added the ability to enter the entire URL for a checklist instead of just the Checklist ID. The About section was edited to be as concise as possible while addressing most of the questions and issues users experienced. I made the options update **localStorage** so each user's preferred data-to-include and units are retained between uses.
 
 <!-- ![RainBird About menu screenshot](/assets/images/RainCrowScreenshots/about.png) -->
 {% image "assets/images/RainCrowScreenshots/about.png", "RainBird about menu screenshot" %}
