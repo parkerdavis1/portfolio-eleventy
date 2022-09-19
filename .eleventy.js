@@ -89,12 +89,34 @@ const imageShortcodeMacro = (src, alt, animated=false) => {
     const stringReturn = `<picture> ${source} ${img} </picture>`;
     return stringReturn;
 };
+const asyncImageCssBackground = async(src, selector) => {
+  let options = {
+    widths: [1000, 2000],
+    formats: ['jpeg'],
+    outputDir: "./_site/images",
+    urlPath: "/images/",
+    useCache: true,
+    sharpJpegOptions: {
+      quality: 99,
+      progressive: true
+    }
+  };
+
+  const metadata = await Image(src, options);
+  let markup = [`${selector} { background-image: url(${metadata.jpeg[0].url});} `];
+  // I use always jpeg for backgrounds
+  metadata.jpeg.slice(1).forEach((image, index) => {
+    markup.push(`@media (min-width: ${metadata.jpeg[index].width}px) { ${selector} {background-image: url(${image.url});}}`);
+  });
+  return markup.join("");
+}
 
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('css');
     eleventyConfig.addPassthroughCopy('assets');
 
+    eleventyConfig.addNunjucksAsyncShortcode("asyncCssBackground", asyncImageCssBackground);
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
     eleventyConfig.addNunjucksShortcode("imageMacro", imageShortcodeMacro);
 

@@ -10,6 +10,11 @@
     {% if hasCodeSnippets %}
     <link rel="stylesheet" href="/css/prism.css">
     {% endif %}
+    {% if hasCssBackground %}
+    <style>
+      {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash" %}
+    </style>
+    {% endif %}
   </head>
   <body>
     
