@@ -12,7 +12,7 @@
     {% endif %}
     {% if hasCssBackground %}
     <style>
-      {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash" %}
+      {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash-bg" %}
     </style>
     {% endif %}
   </head>
@@ -33,5 +33,21 @@
   </body>
   {% if hasCodeSnippets %}
   <script src="/assets/prism.js"></script>
+  {% endif %}
+  {% if hasAnimation %}
+    <script>
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+              console.log(entry);
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('activeAnimateOnce');
+              }
+          })
+      });
+
+      const aniElements = document.querySelectorAll(".animateOnce");
+
+      aniElements.forEach(el => observer.observe(el));
+    </script>
   {% endif %}
 </html>

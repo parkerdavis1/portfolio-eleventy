@@ -54,9 +54,9 @@ nav a {
   z-index: -1;
   background-color: #fff;
   /* background-image: url('../assets/images/mosaic-background.jpg'); */
-  background-size: auto 100%;
+  /* background-size: auto 100%;
   background-position: right;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
@@ -72,6 +72,24 @@ nav a {
   to {
     background-position-y: 100%;
   }
+}
+.splash-bg {
+  position: absolute;
+  /* background-image: url('../assets/images/mosaic-background.jpg'); */
+  width: 101%;
+  height: 100%;
+  background-size: auto 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  z-index: -1;
+  will-change: filter;
+}
+.animateOnce {
+  filter: blur(5px) grayscale(100%);
+  transition: filter 3s 0.5s;
+}
+.activeAnimateOnce {
+  filter: blur(0px) grayscale(0%);
 }
 
 .splash-text {
@@ -186,22 +204,37 @@ section {
   border-radius: 10px;
   box-shadow: 5px 5px var(--black);
 }
+.project-card-tags {
+  line-height: 1.75rem;
+}
 @media (max-width: 500px) {
   .project-container {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
-#projects picture {
+.project-container picture {
   max-height: 300px;
   max-width: 500px;
   /* width: 300px; */
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
   border: 3px black solid;
+  transition: transform 500ms, box-shadow 500ms;
+  will-change: box-shadow, transform;
 }
 .project-card-screenshot picture:hover {
-  border: 3px var(--blue) solid;
+  transform:scale(101%);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+@media (prefers-reduced-motion) {
+  .project-container picture {
+    will-change: none;
+  }
+  .project-container picture:hover {
+    transition: scale(100%);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
 }
 picture img {
   max-width: 100%;
@@ -272,6 +305,7 @@ button {
   /* height: 2rem; */
   padding: 0.5rem 2rem;
   cursor: pointer;
+  background-color: #e9e9ed;
 }
 button:hover {
   background-color: var(--yellow);
