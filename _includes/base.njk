@@ -7,14 +7,38 @@
     <title>Parker Davis{% if title %} - {{title}} {% endif %}</title>
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/style.css" />
+
     {% if hasCodeSnippets %}
-    <link rel="stylesheet" href="/css/prism.css">
+      <link rel="stylesheet" href="/css/prism.css">
     {% endif %}
+
     {% if hasCssBackground %}
-    <style>
-      {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash-bg" %}
-    </style>
+      <style>
+        {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash-bg" %}
+      </style>
     {% endif %}
+
+    {% if not description %}
+      {% set description = "Portfolio site for Parker Davis" %}
+    {% endif %}
+    {% set socialImage = "https://parkerdavis.dev/assets/images/parkerdavissocial.jpg"%}
+
+    <meta name="description" content="{{ description }}" />
+    <link rel="canonical" href="https://parkerdavis.dev{{ page.url }}" />
+    <meta name="robots" content="index, follow" />
+    <!-- social -->
+    <meta property="og:title" content="{% if title %}{{ title }} &middot; {% endif %}Parker Davis"/>
+    <meta property="og:url" content="https://parkerdavis.dev{{ page.url }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="{{socialImage}}" />
+    <meta property="og:type" content="website" />
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="{{description}}" />
+    <meta name="twitter:title" content="{% if title %}{{ title }} &middot; {% endif %}Birds Make Sound" />
+    <meta name="twitter:site" content="@parkd" />
+    <meta name="twitter:image" content="{{socialImage}}" />
+    <meta name="twitter:creator" content="@parkd" />
   </head>
   <body>
     

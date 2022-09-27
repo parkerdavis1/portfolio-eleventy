@@ -3,6 +3,7 @@ title: RainCrow
 layout: project-page.njk
 liveUrl: "https://raincrow.netlify.app/"
 githubUrl: "https://github.com/parkerdavis1/RainCrow"
+description: "RainCrow is a web app to retrieve historical weather records for eBird checklists."
 ---
 <!-- 
 <div class="screenshot-container full-width">
