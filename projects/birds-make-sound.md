@@ -2,6 +2,7 @@
 title: Birds Make Sound
 layout: project-page.njk
 liveUrl: "https://birdsmakesound.com"
+githubUrl: "https://github.com/parkerdavis1/birdsmakesound"
 description: "Birds Make Sound is a blog about birds, sound, and recording."
 ---
 <div class="full-width">
