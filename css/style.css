@@ -264,15 +264,13 @@ picture img {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  column-gap: 5rem;
-}
-.project-card-wide.first {
-  /* margin-top: 1rem; */
+  column-gap: 2rem;
 }
 .project-card-description {
   flex-grow: 1;
   min-width: 300px;
   flex-basis: 300px;
+  max-width: 500px;
   display: flex;
   flex-flow: column;
   justify-content: center;

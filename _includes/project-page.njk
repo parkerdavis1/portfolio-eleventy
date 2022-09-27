@@ -38,9 +38,11 @@ layout: base.njk
                     {% if liveUrl %}<a href="{{liveUrl}}" target="_blank"><button>See it live</button></a>{% endif %}
                     {% if githubUrl %} <a href="{{githubUrl}}" target="_blank"><button>Source Code (github)</button></a> {% endif %}
                 </div>
-            </div>
 
-        {{ content | safe }}
+            </div>
+            
+             {{ content | safe }}
+
         
         </div>
 

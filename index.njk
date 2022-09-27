@@ -53,7 +53,7 @@ hasAnimation: true
           <div class="project-container">
           {{ ProjectCard({
             title: "RainCrow",
-            first: true,
+            first: false,
             img: "./assets/images/RainCrowScreenshots/submitted.png",
             imgAlt: "RainCrow eBird Weather App Screenshot",
             description: "Automatically gather weather data for eBird checklists using historical weather APIs.",
@@ -75,6 +75,18 @@ hasAnimation: true
             pageUrl: "/projects/birds-make-sound",
             liveUrl: "https://birdsmakesound.com/",
             githubUrl: "https://github.com/parkerdavis1/birdsmakesound"
+          }) }}
+
+          {{ ProjectCard({
+            title: "Erick Lundgren Portfolio",
+            first: false,
+            img: "./assets/images/ericklundgrensite.png",
+            imgAlt: "Erick Lundgren portfolio site screenshot",
+            description: "Minimally-styled mobile-response portfolio site",
+            tags: ["HTML", "CSS", "Javascript", "11ty", "Markdown", "Nunjucks"],
+            id: "erick-lundgren",
+            pageUrl: "/projects/erick-lundgren-portfolio",
+            liveUrl: "https://ejlundgren.github.io"
           }) }}
           </div>
 {# 
