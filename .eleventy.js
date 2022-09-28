@@ -1,7 +1,7 @@
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img")
 
-const imageShortcode = async (src, alt, animated=false) => {
+const imageShortcode = async (src, alt, lazy=true) => {
     if (!alt) {
       throw new Error(`Missing \`alt\` on myImage from: ${src}`);
     }
@@ -11,11 +11,6 @@ const imageShortcode = async (src, alt, animated=false) => {
       formats: ["webp", "jpeg", null],
       urlPath: "/images/",
       outputDir: "./_site/images/"
-    }
-  
-    //if animated GIF, include true parameter
-    if (animated) {
-      options['sharpOptions'] = {animated: true}
     }
   
     let stats = await Image(src, options);
@@ -33,18 +28,27 @@ const imageShortcode = async (src, alt, animated=false) => {
     );
   
     const source = `<source type="image/webp" srcset="${srcset["webp"]}">`;
-  
-    const img = `<img
+    let img ='';
+    if (lazy) {
+      img = `<img
       loading="lazy"
       alt="${alt}"
       src="${lowestSrc.url}"
       sizes='100vw'
       srcset="${srcset["jpeg"]}">`;
+    } else {
+      img = `<img
+      alt="${alt}"
+      src="${lowestSrc.url}"
+      sizes='100vw'
+      srcset="${srcset["jpeg"]}">`;
+    }
+
     
     const stringReturn = `<picture> ${source} ${img} </picture>`;
     return stringReturn;
 };
-const imageShortcodeMacro = (src, alt, animated=false) => {
+const imageShortcodeMacro = (src, alt, lazy=true) => {
     if (!alt) {
       throw new Error(`Missing \`alt\` on myImage from: ${src}`);
     }
@@ -56,10 +60,6 @@ const imageShortcodeMacro = (src, alt, animated=false) => {
       outputDir: "./_site/images/"
     }
   
-    //if animated GIF, include true parameter
-    if (animated) {
-      options['sharpOptions'] = {animated: true}
-    }
     //This is the sync part
     Image(src, options); //start generating images
     let stats = Image.statsSync(src, options); //get metadata immediately
@@ -78,13 +78,22 @@ const imageShortcodeMacro = (src, alt, animated=false) => {
     );
   
     const source = `<source type="image/webp" srcset="${srcset["webp"]}">`;
-  
-    const img = `<img
+    let img = '';
+    if (lazy) {
+      img = `<img
       loading="lazy"
       alt="${alt}"
       src="${lowestSrc.url}"
       sizes='100vw'
       srcset="${srcset["jpeg"]}">`;
+    } else {
+      img = `<img
+      alt="${alt}"
+      src="${lowestSrc.url}"
+      sizes='100vw'
+      srcset="${srcset["jpeg"]}">`;
+    }
+
     
     const stringReturn = `<picture> ${source} ${img} </picture>`;
     return stringReturn;

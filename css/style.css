@@ -85,11 +85,11 @@ nav a {
   will-change: filter;
 }
 .animateOnce {
-  filter: blur(5px) grayscale(100%);
+  filter: blur(10px) grayscale(100%);
   transition: filter 3s 0.5s;
 }
 .activeAnimateOnce {
-  filter: blur(0px) grayscale(0%);
+  filter: blur(1px) grayscale(0%);
 }
 
 .splash-text {
