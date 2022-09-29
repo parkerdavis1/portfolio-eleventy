@@ -337,11 +337,16 @@ button:hover {
   margin-top: 1rem;
 }
 .project-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-between; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1rem;
   padding-right: 1rem;
+}
+.nav-item:last-of-type {
+  text-align: right;
 }
 .top-nav.isProject {
   background-color: black;
