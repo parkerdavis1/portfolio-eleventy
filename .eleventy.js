@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img")
+const CleanCSS = require("clean-css");
 
 const imageShortcode = async (src, alt, lazy=true) => {
     if (!alt) {
@@ -134,6 +135,9 @@ module.exports = function(eleventyConfig) {
 
     eleventyConfig.addFilter("readableDate", dateObj => {
         return DateTime.fromJSDate(dateObj).toFormat("MMMM d, yyyy");
+    });
+    eleventyConfig.addFilter("cssmin", function(code) {
+      return new CleanCSS({}).minify(code).styles;
     });
 
     return {
