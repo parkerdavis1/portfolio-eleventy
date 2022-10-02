@@ -89,7 +89,7 @@ nav a {
   transition: filter 3s 0.5s;
 }
 .activeAnimateOnce {
-  filter: blur(2px) grayscale(0%);
+  filter: blur(0px) grayscale(0%);
 }
 
 .splash-text {
