@@ -345,7 +345,7 @@ button:hover {
   gap: 1rem;
   padding-right: 1rem;
 }
-.nav-item:last-of-type {
+.right {
   text-align: right;
 }
 .top-nav.isProject {

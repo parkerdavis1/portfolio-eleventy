@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Parker Davis{% if title %} - {{title}} {% endif %}</title>
+    <meta name="generator" content="{{ eleventy.generator }}">
+
     {% set css %}
       {% include "css/reset.css" %}
       {% include "css/style.css" %}
@@ -16,12 +18,13 @@
       <link rel="stylesheet" href="/css/prism.css">
     {% endif %}
 
-    {% if hasCssBackground %}
       <style>
         {{ css | cssmin | safe }}
-        {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash-bg" %}
+        
+        {% if hasCssBackground %}
+          {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash-bg" %}
+        {% endif %}
       </style>
-    {% endif %}
 
     {% if not description %}
       {% set description = "Portfolio site for Parker Davis" %}

@@ -2,6 +2,8 @@
 title: Erick Lundgren Portfolio Site
 layout: project-page.njk
 liveUrl: "https://ejlundgren.github.io/"
+date: 2022-10-29
+
 ---
 <div class="reading-width">
 <a href="https://ejlundgren.github.io/">
