@@ -8,6 +8,7 @@
   --yellow: #EEE656;
   --blue: #B6DFFB;
   --black: #110F14;
+  --purple: #ACB2FD;
 
   --gap: min(1.5rem, 2vw);
 }
@@ -303,10 +304,14 @@ button {
   /* height: 2rem; */
   padding: 0.5rem 2rem;
   cursor: pointer;
-  background-color: #e9e9ed;
+  /* background-color: #e9e9ed; */
+  background-color: white;
+  outline: 1px lightgray solid;
 }
 button:hover {
-  background-color: var(--yellow);
+  /* background-color: var(--purple); */
+  background-color:#f0f9ff;
+  outline: 1px var(--blue) solid;
 }
 .button-container {
   display: flex;
