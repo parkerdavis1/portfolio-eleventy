@@ -8,7 +8,7 @@ const imageShortcode = async (src, alt, lazy=true) => {
     }
   
     let options = {
-      widths: [500, 1000, 2000],
+      widths: [1000, 2000],
       formats: ["webp", "jpeg", null],
       urlPath: "/images/",
       outputDir: "./_site/images/"
