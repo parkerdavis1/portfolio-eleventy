@@ -85,7 +85,7 @@ Open Weather recently introduced the ["One Call" API](https://openweathermap.org
 
 One perk was the API automatically returned weather for the minute that you request, instead of having to do multiple API requests and calculations. This improved efficiency and greatly reduced complexity for very recent weather requests.
 
-OpenWeather does require inputting a UNIX timestamp for queries. Because the location of a checklist is not necessarily in the same timezone as the user, to calculate the UTC-based UNIX timestamp, I needed some way to find the timezone offset for any given location. I looked into a few tools and services but they seemed overly bloated, complex or too expensive.
+OpenWeather does require inputting a UNIX timestamp for queries. Because the location of a checklist is not necessarily in the same timezone as the user and UNIX timestamps are based on UTC time, I needed some way to find the timezone offset for any given location. I looked into a few tools and services but they seemed overly bloated, complex or too expensive.
 
 Eventually I realized OpenWeather provides timezone offset data in its API returns, so it was only a matter of making a pre-weather query to get the timezone offset for a location, then use that data to calculate the necessary UNIX timestamps to make the actual weather requests. Some minor inefficiency but necessary due to this specific API's quirks.
 
