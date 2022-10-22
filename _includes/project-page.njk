@@ -9,7 +9,7 @@ layout: base.njk
         <div class="project-post">
             <div class="reading-width">
                 
-                <nav class="project-nav">
+                {# <nav class="project-nav">
                 {%- set nextPost = collections.projects | getNextCollectionItem(page) %}
                 {%- if nextPost %}
                     <a href="{{ nextPost.url | url }}">
@@ -31,7 +31,17 @@ layout: base.njk
                 {% else %}
                     <div></div>
                 {% endif %}
-                </nav>
+                </nav> #}
+                <div class="projects-nav">
+                    <div class="nav-container">
+                        <span>Projects:</span>
+                        <ul>
+                        {%- for project in collections.projects | reverse -%}
+                        <li{% if page.url == project.url %} aria-current="page"{% endif %}><a href="{{project.url}}">{{ project.data.title }}</a></li>
+                        {%- endfor -%}
+                        </ul>
+                    </div>
+                </div>
 
                 <h1>{{title}}</h1>
                 {# <picture class="top-picture">
