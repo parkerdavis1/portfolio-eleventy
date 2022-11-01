@@ -87,11 +87,20 @@ nav a {
   will-change: filter;
 }
 .animateOnce {
-  filter: blur(10px) grayscale(100%);
-  transition: filter 3s 0.5s;
+  animation-name: splash-fade-in;
+  animation-duration: 3s;
 }
-.activeAnimateOnce {
-  filter: blur(0px) grayscale(0%);
+
+@keyframes splash-fade-in {
+  0% {
+    filter: blur(10px) grayscale(100%);
+  }
+  20% {
+    filter: blur(10px) grayscale(100%);
+  }
+  100% {
+    filter: blur(0px) grayscale(0%);
+  }
 }
 
 .splash-text {
