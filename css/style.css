@@ -171,9 +171,9 @@ main {
 section {
   margin-top: 4rem;
 }
-/* section:last-of-type {
-  margin-bottom: 20rem;
-} */
+section:last-of-type {
+  margin-bottom: 4rem;
+}
 
 
 /* ----- PROJECTS ----- */
@@ -336,6 +336,18 @@ button:hover {
   padding: 0 var(--gap);
 }
 
+.social-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.social-icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+}
 
 /* ----- PROJECT PAGES ----- */
 
