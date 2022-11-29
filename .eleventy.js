@@ -101,7 +101,7 @@ const imageShortcodeMacro = (src, alt, lazy=true) => {
 };
 const asyncImageCssBackground = async(src, selector) => {
   let options = {
-    widths: [600, 1000, 2000],
+    widths: [1000, 2000],
     formats: ['jpeg', 'webp'],
     outputDir: "./_site/images",
     urlPath: "/images/",
@@ -136,8 +136,14 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("readableDate", dateObj => {
         return DateTime.fromJSDate(dateObj).toFormat("MMMM d, yyyy");
     });
+
     eleventyConfig.addFilter("cssmin", function(code) {
       return new CleanCSS({}).minify(code).styles;
+    });
+
+    eleventyConfig.setBrowserSyncConfig({
+      open: true,
+      browser: "Firefox Developer Edition"
     });
 
     return {

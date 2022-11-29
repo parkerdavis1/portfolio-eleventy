@@ -138,14 +138,21 @@ nav a {
     grid-template-rows: repeat(auto-fit, minmax(max-content, 1fr));
     grid-template-columns: 1fr;
   }
+
+  .splash-bg {
+    background-image: url('assets/images/mosaic-mobile.jpg') !important;
+  }
+
   .splash-text {
     width: clamp(300px, 50%, 400px);
     max-width: 100%;
     font-size: 1rem;
   }
+
   .greeting::after {
     content: " 👇"
   }
+
   .splash-portrait {
     display: flex;
     position: static;
@@ -153,10 +160,12 @@ nav a {
     width: 50vw;
     justify-content: center;
   }
+
   .portrait-container {
     max-height: 100%;
     max-width: 100%;
   }
+
   .nav-right {
     font-size: 0.8rem;
   }
