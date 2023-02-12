@@ -240,13 +240,13 @@ section:last-of-type {
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
   border: 3px black solid;
-  transition: transform 500ms, box-shadow 500ms;
-  will-change: box-shadow, transform;
+  /* transition: transform 500ms, box-shadow 500ms; */
+  /* will-change: box-shadow, transform; */
 }
-.project-card-screenshot picture:hover {
+/* .project-card-screenshot picture:hover {
   transform:scale(101%);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-}
+} */
 @media (prefers-reduced-motion) {
   .project-container picture {
     will-change: none;
