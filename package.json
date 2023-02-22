@@ -12,10 +12,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "@11ty/eleventy": "^2.0.0"
   },
   "dependencies": {
     "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy-upgrade-help": "^2.0.5",
     "clean-css": "^5.3.1"
   }
 }

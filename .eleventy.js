@@ -1,3 +1,4 @@
+// const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img")
 const CleanCSS = require("clean-css");
@@ -126,6 +127,7 @@ const asyncImageCssBackground = async(src, selector) => {
 
 
 module.exports = function(eleventyConfig) {
+    // eleventyConfig.addPlugin(UpgradeHelper);
     eleventyConfig.addPassthroughCopy('css');
     eleventyConfig.addPassthroughCopy('assets');
 
@@ -141,10 +143,10 @@ module.exports = function(eleventyConfig) {
       return new CleanCSS({}).minify(code).styles;
     });
 
-    eleventyConfig.setBrowserSyncConfig({
-      open: true,
-      browser: "Firefox Developer Edition"
-    });
+    // eleventyConfig.setBrowserSyncConfig({
+    //   open: true,
+    //   browser: "Firefox Developer Edition"
+    // });
 
     return {
         markdownTemplateEngine: "njk",
