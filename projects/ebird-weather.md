@@ -103,6 +103,10 @@ After sending the app to some other eBird users, I continued to refine the UI/UX
 <!-- ![RainBird About menu screenshot](/assets/images/RainCrowScreenshots/about.png) -->
 {% image "assets/images/RainCrowScreenshots/about.png", "RainBird about menu screenshot" %}
 
+## Collaboration & Internationalization (i18n)
+
+[Marie-Andrée Boucher-Beaulieu](https://ebird.org/profile/MjczODA4OQ/) volunteered to incorporate an i18n library into the RainCrow codebase and translate the text into French. This paved the way for [JC Paniagua](https://ebird.org/profile/OTc2Mjc0/) to contribute a spanish translation as well. The opportunity to collaborate with others on this project has been really gratifying.
+
 ## Looking Forward
 
 While being amazing resources that are free in low-use cases, the primary limitations of the eBird Weather app are related to the weather APIs it uses. The times I imagine this app would be most useful are when the user returns from birding in remote corners of the world, deep in canyons or high on mountain tops where there is no cell service. Unfortunately, there are rarely weather stations close to these locations, so the weather data returned from the APIs does not necessarily reflect the weather of the microhabitat where you actually were. There is much more room for error in these remote locations.

@@ -18,14 +18,6 @@
       <link rel="stylesheet" href="/css/prism.css">
     {% endif %}
 
-      <style>
-        {{ css | cssmin | safe }}
-        
-        {% if hasCssBackground %}
-          {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash-bg" %}
-        {% endif %}
-      </style>
-
     {% if not description %}
       {% set description = "Portfolio site for Parker Davis" %}
     {% endif %}
@@ -66,7 +58,13 @@
     </script>
     <noscript><p><img src="https://raincrownetlifyapp.matomo.cloud/matomo.php?idsite=3&amp;rec=1" style="border:0;" alt="" /></p></noscript>
     <!-- End Matomo Code --> #}
-
+    <style>
+      {{ css | cssmin | safe }}
+      
+      {% if hasCssBackground %}
+        {% asyncCssBackground "assets/images/mosaic-background.jpg", ".splash-bg" %}
+      {% endif %}
+    </style>
 
   </head>
   <body>

@@ -7,32 +7,28 @@ layout: base.njk
 <main>
     <div class="project-content">
         <div class="project-post">
-            <div class="reading-width">
-                
-                {# <nav class="project-nav">
-                {%- set nextPost = collections.projects | getNextCollectionItem(page) %}
-                {%- if nextPost %}
-                    <a href="{{ nextPost.url | url }}">
-                        <div class="nav-item">
-                        ←{{ nextPost.data.title }}
-                        </div>
-                    </a>
-                {% else %}
-                    <div></div>
-                {% endif %}
 
-                {%- set previousPost = collections.projects | getPreviousCollectionItem(page) %}
-                {%- if previousPost %}
-                    <a href="{{ previousPost.url | url }}">
-                    <div class="nav-item right">
-                    {{ previousPost.data.title }}→
-                    </div>
-                    </a>
-                {% else %}
-                    <div></div>
-                {% endif %}
-                </nav> #}
-                <div class="projects-nav">
+            <div class="projects-nav">
+                <div class="nav-container">
+                    <span>Select Projects:</span>
+                    <ul>
+                    {%- for project in collections.projects | reverse -%}
+                    <li{% if page.url == project.url %} aria-current="page"{% endif %}><a href="{{project.url}}">{{ project.data.title }}</a></li>
+                    {%- endfor -%}
+                    {% if page.url === '/projects/portfolio-sites/'%}
+                    <ul style="font-size:0.8rem; border-top: 1px solid gray;">
+                        <li><a href="#erick">Erick Lundgren</a></li>
+                        <li><a href="#colin">Colin Johnson</a></li>
+                        <li><a href="#parker">Parker Davis</a></li>
+                    </ul>
+                    {% endif %}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="reading-width">
+            
+                {# <div class="projects-nav">
                     <div class="nav-container">
                         <span>Projects:</span>
                         <ul>
@@ -41,7 +37,7 @@ layout: base.njk
                         {%- endfor -%}
                         </ul>
                     </div>
-                </div>
+                </div> #}
 
                 <h1>{{title}}</h1>
                 {# <picture class="top-picture">
@@ -57,7 +53,30 @@ layout: base.njk
             
              {{ content | safe }}
 
-        
+            <hr class="reading-width">
+            <nav class="project-nav reading-width">
+            {%- set nextPost = collections.projects | getNextCollectionItem(page) %}
+            {%- if nextPost %}
+                <a href="{{ nextPost.url | url }}">
+                    <div class="nav-item">
+                    ←{{ nextPost.data.title }}
+                    </div>
+                </a>
+            {% else %}
+                <div></div>
+            {% endif %}
+
+            {%- set previousPost = collections.projects | getPreviousCollectionItem(page) %}
+            {%- if previousPost %}
+                <a href="{{ previousPost.url | url }}">
+                <div class="nav-item right">
+                {{ previousPost.data.title }}→
+                </div>
+                </a>
+            {% else %}
+                <div></div>
+            {% endif %}
+            </nav>
         </div>
 
     </div>
