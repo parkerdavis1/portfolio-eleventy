@@ -33,14 +33,13 @@ Colin wanted a facelift for his portfolio site and I was happy to help. Of note 
 
 <hr style="visibility: hidden">
 
-<h2 id="parker">Parker Davis Portfolio</h2>
+<h2 id="parker">Personal Portfolio</h2>
 <a href="https://parkerdavis.dev">
 {% image "assets/images/parkerdavisscreen.png", "Screenshot of Parker Davis portfolio site" %}
 </a>
 
-Believe it or not, I also made this site.
+Believe it or not, I also made the site you are currently viewing.
 
 <a href="https://parkerdavis.dev"><button>View Home Page</button></a>
-
 
 </div>
