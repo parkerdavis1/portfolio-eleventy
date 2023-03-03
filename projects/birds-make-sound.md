@@ -14,7 +14,7 @@ date: 2022-10-30
 {% image "assets/images/birdsmakesound-screenshot-large2.png", "Birds Make Sound screenshot" %}
 </a>
 
-My own writing about birds, sound, recording, and coding. It doubles as a showcase for creative uses of the web platform for story telling and presenting media. 
+My own writing about birds, sound, recording, and coding. It doubles as a showcase for creative uses of the web for story telling and presenting media.
 
 A good example post is:  <a href="https://birdsmakesound.com/blog/life-bird-500/">Life Bird #500</a>. 
 

@@ -16,7 +16,7 @@ layout: base.njk
                     <li{% if page.url == project.url %} aria-current="page"{% endif %}><a href="{{project.url}}">{{ project.data.title }}</a></li>
                     {%- endfor -%}
                     {% if page.url === '/projects/portfolio-sites/'%}
-                    <ul style="font-size:0.8rem; border-top: 1px solid gray;">
+                    <ul style="border-top: 1px solid gray;">
                         <li><a href="#erick">Erick Lundgren</a></li>
                         <li><a href="#colin">Colin Johnson</a></li>
                         <li><a href="#parker">Personal Portfolio</a></li>

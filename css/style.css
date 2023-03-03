@@ -564,6 +564,7 @@ button:hover {
 
 .projects-nav [aria-current="page"] a {
   color: var(--red);
+  font-weight: 700;
 }
 
 .projects-nav span {
