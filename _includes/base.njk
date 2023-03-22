@@ -82,6 +82,7 @@
     {{ content | safe }}
 
   </body>
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5d72c22025e84ebab20c7185563d1bae"}'></script><!-- End Cloudflare Web Analytics -->
   {% if hasCodeSnippets %}
     <script src="/assets/prism.js"></script>
   {% endif %}
@@ -99,8 +100,6 @@
       const aniElements = document.querySelectorAll(".animateOnce");
 
       aniElements.forEach(el => observer.observe(el));
-
-      <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5d72c22025e84ebab20c7185563d1bae"}'></script><!-- End Cloudflare Web Analytics -->
     </script>
   {% endif %}
 </html>
