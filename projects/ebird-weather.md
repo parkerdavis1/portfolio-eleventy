@@ -6,38 +6,6 @@ githubUrl: "https://github.com/parkerdavis1/RainCrow"
 description: "RainCrow is a web app to retrieve historical weather records for eBird checklists."
 date: 2022-10-31
 ---
-<!-- 
-<div class="screenshot-container full-width">
-    <div class="screenshot">
-        <img src="/assets/images/RainCrowScreenshots/submitted.png" alt="">
-    </div>
-    <div class="screenshot">
-        <img src="/assets/images/RainCrowScreenshots/pre-submit.png" alt="">
-    </div>
-    <div class="screenshot">
-        <img src="/assets/images/RainCrowScreenshots/about.png" alt="">
-    </div>
-    <div class="screenshot">
-        <img src="/assets/images/RainCrowScreenshots/options.png" alt="">
-    </div>
-</div> -->
-
-<!-- <div class="image-slider full-width">
-    <ul>
-        <li>
-            <img src="/assets/images/RainCrowScreenshots/submitted.png" alt="">
-        </li>
-        <li>
-            <img src="/assets/images/RainCrowScreenshots/pre-submit.png" alt="">
-        </li>
-        <li>
-            <img src="/assets/images/RainCrowScreenshots/about.png" alt="">
-        </li>
-        <li>
-            <img src="/assets/images/RainCrowScreenshots/options.png" alt="">
-        </li>
-    </ul>
-</div> -->
 
 <div class="reading-width">
 
