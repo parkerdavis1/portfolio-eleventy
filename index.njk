@@ -172,18 +172,33 @@ hasCssBackground: true
               <a href="https://www.linkedin.com/in/parkerdavisaz/">
                   <img src="/assets/images/social-icons/linkedin-icon.png" alt="LinkedIn profile" title="LinkedIn profile" class="social-icon">
               </a>
-              <a href="https://twitter.com/park_d">
+              {# <a href="https://twitter.com/park_d">
                   <img src="/assets/images/social-icons/twitter-icon.png" alt="Twitter profile" title="Twitter profile" class="social-icon">
-              </a>
-              <a href="https://www.instagram.com/parkd/">
+              </a> #}
+              {# <a href="https://www.instagram.com/parkd/">
                   <img src="/assets/images/social-icons/instagram-icon.png" alt="Instagram profile" title="Instagram profile" class="social-icon">
-              </a>
+              </a> #}
               {# <a href="https://ebird.org/profile/NDczMDQx/">
                   <img src="/assets/images/social-icons/ebird-icon.png" alt="eBird profile" title="eBird profile" class="social-icon">
               </a> #}
             </div>
           <p>Email: <a href="mailto:parker@birdsmakesound.com" class="email">parker@birdsmakesound.com</a></p>
           <p>Reach out if you want to collaborate on any project, big or small!</p>
+          <form name="contact" method="POST" data-netlify="true">
+            <p>
+              <label for="name">Name:</label>
+              <input type="text" name="name" required/>
+            </p>
+            <p>
+              <label for="email">Email:</label>
+              <input type="email" name="email" required/>
+            </p>
+            <p>
+              <label for="message">Message: </label>
+              <textarea name="message" autocomplete="off" required></textarea>
+            </p>
+            <button type="submit">Send</button>
+          </form>
 
         </section>
 

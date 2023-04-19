@@ -577,3 +577,11 @@ hr {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
+
+/* --- FORM --- */
+
+form p {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+}
