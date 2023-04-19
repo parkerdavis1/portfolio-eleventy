@@ -186,15 +186,13 @@ main {
   max-width: 70rem;
   /* border: red solid 1px; */
   margin: auto;
+  padding-bottom: 4rem;
 }
 
 section {
   margin-top: 4rem;
 }
 
-section:last-of-type {
-  margin-bottom: 4rem;
-}
 
 
 /* ----- PROJECTS ----- */
@@ -395,7 +393,7 @@ button:hover {
   /* max-width: 40rem; */
   margin: auto;
   padding: 0 var(--gap);
-  padding-bottom: 5rem;
+  /* padding-bottom: 5rem; */
 }
 
 .project-content img {
