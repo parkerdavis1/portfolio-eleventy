@@ -256,7 +256,7 @@ section {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
-  border: 3px black solid;
+  /* border: 3px black solid; */
   /* transition: transform 500ms, box-shadow 500ms; */
   /* will-change: box-shadow, transform; */
 }
@@ -352,13 +352,13 @@ button {
   cursor: pointer;
   /* background-color: #e9e9ed; */
   background-color: white;
-  outline: 1px lightgray solid;
+  border: 1px lightgray solid;
 }
 
 button:hover {
   /* background-color: var(--purple); */
   background-color:#f0f9ff;
-  outline: 1px var(--blue) solid;
+  border: 1px var(--blue) solid;
 }
 
 .button-container {
@@ -582,4 +582,14 @@ form p {
   display: grid;
   grid-template-columns: 1fr;
   margin-top: 1rem;
+}
+
+textarea {
+  
+}
+
+form input,
+form textarea,
+form button {
+  border: 1px solid #999;
 }
