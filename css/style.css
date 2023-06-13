@@ -353,6 +353,7 @@ button {
   /* background-color: #e9e9ed; */
   background-color: white;
   border: 1px lightgray solid;
+  color: var(--black);
 }
 
 button:hover {
