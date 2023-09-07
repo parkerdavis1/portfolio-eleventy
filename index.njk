@@ -2,61 +2,66 @@
 layout: base.njk
 hasCssBackground: true
 ---
-      <div class="splash">
-        <div class="splash-bg animateOnce"></div>
-        <div class="splash-text">
-          <h2 class="greeting">Hi, I’m Parker</h2>
-          <p>I am a web developer, birder, and musician interested in the intersection of conservation, research, sound, and coding.</p>
-          {# <p>I am a web developer, birder, and musician.</p> #}
-        </div>
-        <div class="splash-portrait">
-            <div class="portrait-container">
-              {% image "./assets/images/portrait-bw.png", "Black and white image of Parker" %}
-            </div>
-        </div>
-      </div>
-      
-      <main>
-        <section id="projects">
-          <h2>Projects:</h2>
 
-          {% macro ProjectCard(params) %}
-          <div class="project-card-wide {% if params.first %} first{% endif %}" id="{{ params.id }}">
-            <div class="project-card-screenshot">
-              <a href="{{ params.pageUrl}}">
-                {% if params.animated %}
-                <picture>
-                  <img src="{{params.img}}" alt="{{params.imgAlt}}">
-                </picture>
-                {% else %}
-                  {% imageMacro params.img, params.imgAlt, false %}
-                {% endif %}
+<div class="splash">
+  <div class="splash-bg animateOnce"></div>
+  <div class="splash-text">
+    <h2 class="greeting">Hi, I’m Parker</h2>
+    <p>I am a web developer, birder, and musician interested in the intersection of conservation, research, sound, and coding.</p>
+    {# <p>I am a web developer, birder, and musician.</p> #}
+  </div>
+  <div class="splash-portrait">
+    <div class="portrait-container">
+      {% image "./assets/images/portrait-bw.png", "Black and white image of Parker" %}
+    </div>
+  </div>
+</div>
+<main>
+  <section id="projects">
+    <h2>Projects:</h2>
+    {% macro ProjectCard(params) %}
+      <div class="project-card-wide {% if params.first %} first{% endif %}" id="{{ params.id }}">
+        <div class="project-card-screenshot">
+          <a href="{{ params.pageUrl }}">
+            {% if params.animated %}
+              <picture>
+                <img src="{{ params.img }}" alt="{{ params.imgAlt }}"></picture>
+              {% else %}
+                {% imageMacro params.img, params.imgAlt, false %}
+              {% endif %}
+            </a>
+          </div>
+          <div class="project-card-description">
+            <div>
+              <a href="{{ params.pageUrl }}">
+                <h3>{{ params.title }}</h3>
               </a>
-            </div>
-            <div class="project-card-description">
-              <div>
-                <a href="{{ params.pageUrl}}"><h3>{{ params.title }}</h3></a>
-                <p>{{ params.description }}</p>
-                <div class="project-card-tags">
+              <p>{{ params.description }}</p>
+              <div class="project-card-tags">
                 <p>
                   {% for tag in params.tags %}
-                  <span>{{ tag }}</span>
+                    <span>{{ tag }}</span>
                   {% endfor %}
                 </p>
               </div>
-              </div>
-             
-              
-              <div class="button-container">
-                  {% if params.liveUrl %}<a href="{{params.liveUrl}}" target="_blank"><button>See it live</button></a> {% endif %}
-                  {% if params.githubUrl %}<a href="{{params.githubUrl}}" target="_blank"><button>Source Code</button></a>{% endif %}
-                </div>
+            </div>
+            <div class="button-container">
+              {% if params.liveUrl %}
+                <a href="{{ params.liveUrl }}" target="_blank">
+                  <button>See it live</button>
+                </a>
+              {% endif %}
+              {% if params.githubUrl %}
+                <a href="{{ params.githubUrl }}" target="_blank">
+                  <button>Source Code</button>
+                </a>
+              {% endif %}
             </div>
           </div>
-          {% endmacro %}
-
-          <div class="project-container">
-          {{ ProjectCard({
+        </div>
+      {% endmacro %}
+      <div class="project-container">
+        {{ ProjectCard({
             title: "Rare Bird Alert",
             first: false,
             img: "./assets/images/rare-bird-alert/rba-light.png",
@@ -68,8 +73,7 @@ hasCssBackground: true
             liveUrl: "https://rarebird.parkerdavis.dev/US-AZ-013?days=7",
             githubUrl: "https://github.com/parkerdavis1/eBirdRareBird"
           }) }}
-
-          {{ ProjectCard({
+        {{ ProjectCard({
             title: "RainCrow",
             first: false,
             img: "./assets/images/RainCrowScreenshots/submitted.png",
@@ -79,10 +83,9 @@ hasCssBackground: true
             id: "ebird-weather",
             pageUrl: "/projects/ebird-weather",
             liveUrl: "https://raincrow.netlify.app/",
-            githubUrl: "https://github.com/parkerdavis1/RainCrow"
+            githubUrl: "https://github.com/parkerdavis1/raincrow-sveltekit"
           }) }}
-
-          {{ ProjectCard({
+        {{ ProjectCard({
             title: "Birds Make Sound Blog",
             first: false,
             img: "./assets/images/birdsmakesound-screenshot.png",
@@ -94,8 +97,7 @@ hasCssBackground: true
             liveUrl: "https://birdsmakesound.com/",
             githubUrl: "https://github.com/parkerdavis1/birdsmakesound"
           }) }}
-
-          {{ ProjectCard({
+        {{ ProjectCard({
             title: "Portfolio Sites",
             first: false,
             img: "./assets/images/composite-portfolio.jpg",
@@ -106,101 +108,40 @@ hasCssBackground: true
             id: "portfolio-sites",
             pageUrl: "/projects/portfolio-sites/"
           }) }}
-
-          {# {{ ProjectCard({
-            title: "Colin Johnson Portfolio",
-            first: false,
-            img: "./assets/images/colinjohnsonscreen.png",
-            imgAlt: "Colin Johnson portfolio site screenshot",
-            description: "Minimally-styled mobile-response portfolio site",
-            tags: ["11ty SSG", "HTML", "CSS", "Javascript", "Markdown", "Nunjucks"],
-            id: "colin-johnson",
-            pageUrl: "/projects/portfolio-sites/#colin",
-            liveUrl: "https://colinjohnson.page/"
-          }) }} #}
-
-
-          </div>
-{# 
-          <div class="project-card-wide" id="ebird-weather">
-            <div class="project-card-screenshot">
-              <picture><img src="./assets/images/ebirdWeather.png" alt="eBirdWeather App Screenshot"></picture>
-            </div>
-            <div class="project-card-description">
-              <a href="/projects/ebird-weather"><h3>eBird Weather App</h3></a>
-              <p>Automatically gather weather data for eBird checklists using historical weather APIs.</p>
-              <p>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>Javascript</span>
-              </p>
-              <br>
-              <a href="#ebird-weather"><button>See it live!</button></a>
-              <a href="#ebird-weather"><button>Source Code</button></a>
-            </div>
-          </div>
-          
-          <div class="project-card-wide" id="birds-make-sound">
-            <div class="project-card-screenshot">
-              <picture><img src="./assets/images/birdsmakesound-screenshot.png" alt="eBirdWeather App Screenshot"></picture>
-            </div>
-            <div class="project-card-description">
-              <a href="/projects/birds-make-sound"><h3>Birds Make Sound Blog</h3></a>
-              <p>Personal writing about birds, sound, and audio recording.</p>
-              <p>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>Javascript</span>
-                <span>11ty</span>
-                <span>Markdown</span>
-                <span>Nunjucks</span>
-              </p>
-              <br>
-              <a href="#birds-make-sound"><button>See it live!</button></a>
-              <a href="#birds-make-sound"><button>Source Code</button></a>
-            </div> #}
-          </div>
-
-        </section>
-
-        <section id="contact">
-          <h2>Contact</h2>
-            <div class="social-container">
-              <a href="https://github.com/parkerdavis1">
-                  <img src="/assets/images/social-icons/github-icon.png" alt="Github profile" title="Github profile" class="social-icon">
-              </a>
-
-              <a href="https://www.linkedin.com/in/parkerdavisaz/">
-                  <img src="/assets/images/social-icons/linkedin-icon.png" alt="LinkedIn profile" title="LinkedIn profile" class="social-icon">
-              </a>
-              {# <a href="https://twitter.com/park_d">
-                  <img src="/assets/images/social-icons/twitter-icon.png" alt="Twitter profile" title="Twitter profile" class="social-icon">
-              </a> #}
-              {# <a href="https://www.instagram.com/parkd/">
-                  <img src="/assets/images/social-icons/instagram-icon.png" alt="Instagram profile" title="Instagram profile" class="social-icon">
-              </a> #}
-              {# <a href="https://ebird.org/profile/NDczMDQx/">
-                  <img src="/assets/images/social-icons/ebird-icon.png" alt="eBird profile" title="eBird profile" class="social-icon">
-              </a> #}
-            </div>
-          <p>Email: <a href="mailto:parker@birdsmakesound.com" class="email">parker@birdsmakesound.com</a></p>
-          <p>Reach out if you want to collaborate on any project, big or small!</p>
-          <form name="contact" method="POST" data-netlify="true">
-            <p>
-              <label for="name">Name:</label>
-              <input type="text" name="name" required/>
-            </p>
-            <p>
-              <label for="email">Email:</label>
-              <input type="email" name="email" required/>
-            </p>
-            <p>
-              <label for="message">Message: </label>
-              <textarea name="message" autocomplete="off" required></textarea>
-            </p>
-            <button type="submit">Send</button>
-          </form>
-
-        </section>
-
-      </main>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="social-container">
+      <a href="https://github.com/parkerdavis1">
+        <img src="/assets/images/social-icons/github-icon.png" alt="Github profile" title="Github profile" class="social-icon"></a>
+        <a href="https://www.linkedin.com/in/parkerdavisaz/">
+          <img
+            src="/assets/images/social-icons/linkedin-icon.png"
+            alt="LinkedIn profile"
+            title="LinkedIn profile"
+            class="social-icon"></a>
+        </div>
+        <p>Email:
+          <a href="mailto:parker@birdsmakesound.com" class="email">parker@birdsmakesound.com</a>
+        </p>
+        <p>Reach out if you want to collaborate on any project, big or small!</p>
+        <form name="contact" method="POST" data-netlify="true">
+          <p>
+            <label for="name">Name:</label>
+            <input type="text" name="name" required/>
+          </p>
+          <p>
+            <label for="email">Email:</label>
+            <input type="email" name="email" required/>
+          </p>
+          <p>
+            <label for="message">Message:
+            </label>
+            <textarea name="message" autocomplete="off" required></textarea>
+          </p>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
