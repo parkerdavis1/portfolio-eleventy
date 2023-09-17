@@ -22,20 +22,20 @@ hasCssBackground: true
     {% macro ProjectCard(params) %}
       <div class="project-card-wide {% if params.first %} first{% endif %}" id="{{ params.id }}">
         <div class="project-card-screenshot">
-          <a href="{{ params.pageUrl }}">
+          {% if params.pageUrl %}<a href="{{ params.pageUrl }}">{% endif %}
             {% if params.animated %}
               <picture>
                 <img src="{{ params.img }}" alt="{{ params.imgAlt }}"></picture>
               {% else %}
                 {% imageMacro params.img, params.imgAlt, false %}
               {% endif %}
-            </a>
+            {% if params.pageUrl %}</a>{% endif %}
           </div>
           <div class="project-card-description">
             <div>
-              <a href="{{ params.pageUrl }}">
+              {% if params.pageUrl %}<a href="{{ params.pageUrl }}">{% endif %}
                 <h3>{{ params.title }}</h3>
-              </a>
+              {% if params.pageUrl %}</a>{% endif %}
               <p>{{ params.description }}</p>
               <div class="project-card-tags">
                 <p>
@@ -61,6 +61,16 @@ hasCssBackground: true
         </div>
       {% endmacro %}
       <div class="project-container">
+        {{ ProjectCard({
+            title: "Equestrian Volunteer Scheduler",
+            first: false,
+            img: "./assets/images/evs-screenshot.png",
+            imgAlt: "Equestion Volunteer Scheduler screenshot",
+            description: "Custom server-rendered full stack administrative web application with role-based access control for local non-profit",
+            tags: ["React", "Remix", "Typescript", "SQlite", "Prisma", "CI/CD", "TailwindCSS", "Playwright", "Zod"],
+            id: "evs",
+            githubUrl: "https://github.com/opportunity-hack/evs/"
+          }) }}
         {{ ProjectCard({
             title: "Rare Bird Alert",
             first: false,
