@@ -17,6 +17,6 @@
   "dependencies": {
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-upgrade-help": "^2.0.5",
-    "clean-css": "^5.3.1"
+    "clean-css": "^5.3.3"
   }
 }
